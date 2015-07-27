@@ -20,3 +20,40 @@ The league has 10 weight classes, 5 each for men and women, with a minimum weigh
 
 Design the data model for this client. Use any design tools you like. Save your model as text or a legible image file.
 
+
+VENUE TABLE
+  -id
+  -location
+  -capacity
+  -date
+  -ticket_price
+
+FIGHTS TABLE
+  -id
+  -venue_id
+  -schedule_id (goes after this fight)
+
+  =>VENUE has a many-to-one relationship with fights
+
+SCHEDULETTABLE
+  -id
+  -fight_id
+
+FIGHTERS TABLE
+  -id
+  -name
+
+WEIGHT_CLASS TABLE
+  -id
+  -fighter_id
+
+=> fighter has one-to-one relationship with weightclass
+
+FIGHTS-FIGHTERS JOIN TABLE
+  -id
+  -fight_id
+  -fighter_id
+  - winner_boolean
+
+=>a fighter has a many to many relationship with fights
+
